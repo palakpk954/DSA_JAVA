@@ -1,3 +1,5 @@
+CODE 1: NORMAL CLASS AND OBJECT CODE
+
 #include <iostream>
 using namespace std;
 class Student{//student is a new datatype
@@ -21,6 +23,47 @@ int main(){
     
     cout<<s1.name<<endl;
     cout<<s2.name<<endl;
+
+
+    return 0;
+}
+
+CODE 2: PASS BY VALUE AND PASS BY REFRENCE USING SOME CHANGE FUNCTION WHICH WE CREATED
+#include <iostream>
+using namespace std;
+class Student{//student is a new datatype
+public:
+string name;
+int rno;
+float gpa;
+};
+
+void print (Student s){
+    cout<<s.name<<" "<<s.rno<<" "<<s.gpa<<" "<<endl;
+}
+
+void change(Student& s){ //&ki wajah se pass by refrence ho gya
+    s.name="khushi";
+    
+}
+
+int main(){
+    Student s1;
+    s1.name = "palak";
+    s1.rno = 89;
+    s1.gpa = 9.8;
+    
+    Student s2;
+    s2.name = "ram";
+    s2.rno = 9;
+    s2.gpa = 9.2;
+    
+    
+    print(s1);
+    change(s1); //pass by value tha when & was not used
+    print(s1);
+    //print(s2);
+    
 
 
     return 0;
