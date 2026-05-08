@@ -149,7 +149,7 @@ int main(){
     
 }
 
-CODE 5: VECTOR MAKING
+CODE 5: VECTOR MAKING--all the funtions made using logics.
 
 #include <iostream>
 using namespace std;
@@ -180,11 +180,28 @@ class Vector{
         size++;
     }
     
-    void print(){//to print the elements of vector 
+    void print(){//to print the elements of array 
         for (int i=0; i<size;i++){
             cout<<arr[i]<<" ";
         }
         cout<<endl;
+    }
+    
+    int get(int idx){//to get the index of the array
+        if(size==0){
+            cout<<"Array is empty"<<endl;
+            return -1;
+        }
+        if (idx>=size || idx<0){
+            cout<<"Invalid index"<<endl;
+        }
+        return arr[idx];
+    }
+    void remove(){
+        if(size==0){
+            cout<<"Array is empty"<<endl;
+        }
+        size--;
     }
 };
 
@@ -200,10 +217,12 @@ int main() {
     cout<<v.size<<" "<<v.capacity<<endl;//22
     v.add(12);
     v.print();
+    cout<<v.size<<" "<<v.capacity<<endl;//22
+    
+    cout<<v.get(10)<<endl;
+    v.remove();
+    v.print();
     
     return 0;
 }
-    
-
-
 
